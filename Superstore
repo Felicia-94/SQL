@@ -36,24 +36,19 @@ ORDER BY price asc;
 
 #Here I showed statistics about prices such as sum, average, minimum, maximum, and count.
 SELECT SUM(price) AS Sum_Price, category
-FROM superstore
-GROUP BY category;
+FROM superstore;
 
 SELECT AVG(price) AS Average_price, category
-FROM superstore
-GROUP BY category;
+FROM superstore;
 
 SELECT MIN(price) AS Minimum_price, category
-FROM superstore
-GROUP BY category;
+FROM superstore;
 
 SELECT MAX(price) AS Maximum_price, category
-FROM superstore
-GROUP BY category;
+FROM superstore;
 
 SELECT COUNT (stock_quantity) AS Quantity_in_stock, category
-FROM superstore
-GROUP BY category;
+FROM superstore;
 
 #Here I showed statistics about the price for items in the category of "Kitchen Supplies". 
 SELECT SUM(price) AS Sum_price_kitchen_supplies
