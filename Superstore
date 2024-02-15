@@ -29,37 +29,45 @@ VALUES
 
 #For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices. 
 
-#Use a SELECT statement to order the items by price in ascending order.
+#Here I use a SELECT statement to order the items by price in ascending order.
 SELECT *
 FROM superstore
 ORDER BY price asc;
 
-#Show statistics about the item prices.
-SELECT SUM(price)
-FROM superstore;
+#Here I showed statistics about prices such as sum, average, minimum, maximum, and count.
+SELECT SUM(price) AS Sum_Price, category
+FROM superstore
+GROUP BY category;
 
-SELECT AVG(price)
-FROM superstore;
+SELECT AVG(price) AS Average_price, category
+FROM superstore
+GROUP BY category;
 
-SELECT MIN(price)
-FROM superstore;
+SELECT MIN(price) AS Minimum_price, category
+FROM superstore
+GROUP BY category;
 
-SELECT MAX(price)
-FROM superstore;
+SELECT MAX(price) AS Maximum_price, category
+FROM superstore
+GROUP BY category;
 
 SELECT COUNT(price)
 FROM superstore;
 
-#Show statistics about the price for items in the category of "Kitchen Supplies". 
-SELECT SUM(price)
+SELECT COUNT (stock_quantity) AS Quantity_in_stock, category
+FROM superstore
+GROUP BY category;
+
+#Here I showed statistics about the price for items in the category of "Kitchen Supplies". 
+SELECT SUM(price) AS Sum_price_kitchen_supplies
 FROM superstore
 WHERE category = 'Kitchen Supplies';
 
-SELECT AVG(price)
+SELECT AVG(price) AS Average_price_kitchen_supplies
 FROM superstore
-WHERE category="Kitchen Supplies"
+WHERE category="Kitchen Supplies";
 
-#Show how many air purifiers are in stock.
+#Here I showed how many air purifiers are currently in stock.
 SELECT SUM(stock_quantity) AS air_purifiers_in_stock
 FROM superstore
 WHERE category = 'Appliances' AND item_name = 'Air Purifier';
