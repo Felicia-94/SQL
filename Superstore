@@ -51,9 +51,6 @@ SELECT MAX(price) AS Maximum_price, category
 FROM superstore
 GROUP BY category;
 
-SELECT COUNT(price)
-FROM superstore;
-
 SELECT COUNT (stock_quantity) AS Quantity_in_stock, category
 FROM superstore
 GROUP BY category;
